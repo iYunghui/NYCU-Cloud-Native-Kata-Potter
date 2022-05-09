@@ -51,5 +51,22 @@ describe('Potter', () => {
     let books = [0, 1, 2, 3, 4];
     expect(potter.calculatePrice(books)).toBe(8 * 5 * 0.75);
   });
+
+  test('testSeveralDiscounts', () => {
+    let books = [0, 0, 1];
+    expect(potter.calculatePrice(books)).toBe(8 + (8 * 2 * 0.95));
+  });
+  test('testSeveralDiscounts', () => {
+    let books = [0, 0, 1, 1];
+    expect(potter.calculatePrice(books)).toBe(2 * (8 * 2 * 0.95));
+  });
+  test('testSeveralDiscounts', () => {
+    let books = [0, 0, 1, 2, 2, 3];
+    expect(potter.calculatePrice(books)).toBe((8 * 4 * 0.8) + (8 * 2 * 0.95));
+  });
+  test('testSeveralDiscounts', () => {
+    let books = [0, 1, 1, 2, 3, 4];
+    expect(potter.calculatePrice(books)).toBe(8 + (8 * 5 * 0.75));
+  });
 });
 
