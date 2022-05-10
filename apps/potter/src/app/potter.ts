@@ -12,6 +12,12 @@ export class Potter {
                 if(!this.basket[j].includes(books[i])) {
                     flag = 1;
                     this.basket[j].push(books[i]);
+
+                    if(this.basket[j].length==5 && this.basket.length>j+1 && this.basket[j+1].length==3) {
+                        this.basket[j].pop();
+                        this.basket[j+1].push(books[i]);
+                    }
+
                     break;
                 }
             }
